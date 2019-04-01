@@ -1,0 +1,39 @@
+version: '2.1'
+
+volumes:
+    logs:
+        driver: local
+
+services:
+    product-db:
+        container_name: product-db
+        build: ./db
+        ports:
+            - '3307:3306'
+        environment:
+            MYSQL_DATABASE: product_api
+            MYSQL_ROOT_PASSWORD: mysql
+        volumes:
+            - /var/lib/mysql                                                                                                                                      
+            - ./db/scripts:/docker-entrypoint-initdb.d/ 
+        healthcheck:
+            test: exit 0
+
+    product-api:
+        container_name: product-api
+        build: ./src
+        working_dir: /var/www
+        command: php -S 0.0.0.0:8080 -t public
+        environment:
+            docker: "true"
+            DATABASE_URL: mysql://mysql:mysql@product-db:3306/product_api
+        ports:
+            - 8081:8080
+        volumes:
+            - .:/var/www
+            - logs:/var/www/logs
+        depends_on:
+            product-db:
+                condition: service_healthy
+        links:
+            - product-db
