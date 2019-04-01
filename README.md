@@ -17,4 +17,3 @@ Run this command from the directory in which you want to install the application
 
 	https://mayamalaviya.github.io/erply/
 
-That's it!
