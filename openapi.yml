@@ -128,3 +128,19 @@ paths:
           description: 'Invalid ID supplied'
         '404':
           description: 'Product not found'
+components:
+  schemas:
+    Product:
+      title: 'Product model'
+      description: 'Product model'
+      required:
+        - name
+        - price
+      properties:
+        name:
+          title: 'Product name'
+          description: 'Product name'
+        price:
+          title: 'Product price'
+          description: 'Product price'
+      type: object

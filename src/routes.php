@@ -17,30 +17,28 @@ use Slim\Http\Response;
  * )
  */
 
- /**
-    * @OA\Schema(
-    *    schema="Product",
-    *    description="Product model",
-    *    title="Product model",
-    *    required={"name", "price"},
-    * )
+/**
+ * @OA\Schema(
+ *    schema="Product",
+ *    description="Product model",
+ *    title="Product model",
+ *    required={"name", "price"},
+ * 
 
-    * @OA\Property(
-    *    description="Product name",
-    *    title="Product name"
-    * )
-    * 
-    * @var string
+ *    @OA\Property(
+ *      property="name",
+ *      description="Product name",
+ *      title="Product name"
+ *    ),
+ * 
+ *    @OA\Property(
+ *      property="price", 
+ *      description="Product price",
+ *      title="Product price"
+ *    )
+ * )
 */
 
-/**
- * @OA\Property(
- *    description="Product price",
- *    title="Product price"
- * )
- * 
- * @var integer
- */
 // Routes
 
 $app->group('/api/v1', function () {
