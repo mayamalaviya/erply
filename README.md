@@ -15,5 +15,5 @@ Run this command from the directory in which you want to install the application
 
 ## Documentation
 
-	[GitHub](https://mayamalaviya.github.io/erply)
+	<https://mayamalaviya.github.io/erply>
 
