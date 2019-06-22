@@ -6,7 +6,7 @@ This is an example api built with Slim php framework and documented using OpenAp
 
 Run this command from the directory in which you want to install the application.
 
-    $ git clone https://github.com/mayamalaviya/erply
+    $ git clone https://github.com/mayamalaviya/php-api
 
 ### Run with Docker
 
@@ -15,5 +15,5 @@ Run this command from the directory in which you want to install the application
 
 ## Documentation
 
-	https://mayamalaviya.github.io/erply
+	https://mayamalaviya.github.io/php-api
 
